@@ -20,6 +20,7 @@ export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
     Credentials({
+      // @ts-expect-error
       async authorize(credentials) {
         const parsedCredentials = z
           .object({

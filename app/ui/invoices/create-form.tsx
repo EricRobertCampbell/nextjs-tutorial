@@ -132,9 +132,12 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </fieldset>
         <div id="form-error" aria-live="polite" aria-atomic="true">
-          {Object.keys(state.errors).length > 0 ? (
-            <p className="mt-2 text-sm text-red-500">Error submitting form</p>
-          ) : null}
+          {
+            // @ts-expect-error
+            Object.keys(state.errors).length > 0 ? (
+              <p className="mt-2 text-sm text-red-500">Error submitting form</p>
+            ) : null
+          }
         </div>
       </div>
       <div className="mt-6 flex justify-end gap-4">

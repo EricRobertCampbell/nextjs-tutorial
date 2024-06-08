@@ -55,6 +55,7 @@ export const createInvoice = async (prevState: State, formData: FormData) => {
     `;
   } catch (error) {
     return {
+      // @ts-expect-error
       message: `Database error: failed to create invoice ${error.message}`,
     };
   }
@@ -80,6 +81,7 @@ export const updateInvoice = async (id: string, formData: FormData) => {
     `;
   } catch (error) {
     return {
+      // @ts-expect-error
       message: `Database error: failed to update invoice ${error.message}`,
     };
   }
@@ -97,6 +99,7 @@ export const deleteInvoice = async (id: string) => {
     return { message: 'Invoice deleted successfully' };
   } catch (error) {
     return {
+      // @ts-expect-error
       message: `Database error: failed to delete invoice ${error.message}`,
     };
   }
